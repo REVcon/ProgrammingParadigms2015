@@ -1,5 +1,5 @@
-trim(L1,L2) :- append([_],L,L1), append(L2,[_], L).
-first(X,L) :- append([X], _, L).
+trim([X|L],LR) :- append(LR,[_], L).
+first(X,[X|_]).
 last(X, L):- append(_, [X], L).
 
 first_last(L1,L2):-trim(L1,L), trim(L2,L), first(H,L1), first(T,L2), last(T,L1), last(H, L2).
